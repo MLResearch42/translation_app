@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Spanish Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>English to Spanish Translator</h1>
+            <p>Powered by OpenAI ChatGPT</p>
+        </header>
+
+        <main class="translator-container">
+            <div class="input-section">
+                <label for="english-input">English Text</label>
+                <textarea 
+                    id="english-input" 
+                    placeholder="Enter English text to translate..."
+                    rows="8"
+                ></textarea>
+                <div class="input-controls">
+                    <span class="character-count">0 characters</span>
+                    <button id="clear-btn" class="secondary-btn">Clear</button>
+                </div>
+            </div>
+
+            <div class="button-section">
+                <button id="translate-btn" class="primary-btn">
+                    <span class="btn-text">Translate</span>
+                    <span class="loading-spinner" style="display: none;">
+                        <div class="spinner"></div>
+                    </span>
+                </button>
+            </div>
+
+            <div class="output-section">
+                <label for="spanish-output">Spanish Translation</label>
+                <div class="output-container">
+                    <textarea 
+                        id="spanish-output" 
+                        placeholder="Translation will appear here..."
+                        rows="8"
+                        readonly
+                    ></textarea>
+                    <button id="copy-btn" class="copy-btn" style="display: none;" title="Copy translation">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+
+        <footer>
+            <p>Enter your OpenAI API key in the JavaScript file to use this translator</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
